@@ -1,11 +1,11 @@
 <!-- Top Bar -->
 <div class="top-bar">
     <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
-        <div class="d-flex gap-4">
-            <a href="tel:+255657099992"><i class="bi bi-telephone-fill text-warning me-2"></i> +255 657 099 992</a>
-            <a href="mailto:zamacontractorslimited25@gmail.com"><i class="bi bi-envelope-fill text-warning me-2"></i> zamacontractorslimited25@gmail.com</a>
+        <div class="d-flex gap-4 top-bar-contact">
+            <a href="tel:+255657099992" class="d-none d-md-inline"><i class="bi bi-telephone-fill text-warning me-2"></i> +255 657 099 992</a>
+            <a href="mailto:info@zamacontractors.co.tz" class="me-4"><i class="bi bi-envelope-fill me-2 text-white"></i>info@zamacontractors.co.tz</a>
         </div>
-        <div class="d-flex gap-3">
+        <div class="d-none d-md-flex gap-3">
             <a href="#"><i class="bi bi-facebook"></i></a>
             <a href="#"><i class="bi bi-instagram"></i></a>
             <a href="#"><i class="bi bi-tiktok"></i></a>
@@ -20,6 +20,7 @@
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <img src="{{ asset('logo.png') }}" alt="Zama Logo" height="45" class="me-2">
+                    <span class="fw-900 fs-4 text-primary-blue d-none d-sm-inline">ZAMA CONSTRUCTORS</span>
                 </a>
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="bi bi-list fs-2 text-dark"></span>

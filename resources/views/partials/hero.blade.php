@@ -9,9 +9,9 @@
     
     <div class="carousel-inner h-100">
         <div class="carousel-item active h-100" style="background-image: url('{{ asset('african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool.jpg') }}')"></div>
-        <div class="carousel-item h-100" style="background-image: url('{{ asset('african-american-logistics-managers-team-dicussing-goods-distribution-warehouse-reception-post-office-men-woman-workers-planning-stock-supply-while-chatting-counter-desk_482257-59698.jpg') }}')"></div>
         <div class="carousel-item h-100" style="background-image: url('{{ asset('medium-shot-plus-size-woman-working-construction.jpg') }}')"></div>
-        <div class="carousel-item h-100" style="background-image: url('{{ asset('warehouse-smiling-colleagues-scanning-cardboard-box-barcode-chatting.jpg') }}')"></div>
+        <div class="carousel-item h-100" style="background-image: url('{{ asset('smiling-young-builder-man-uniform-with-safety-helmet-gesturing-victory-sign-isolated-white-wall-with-copy-space_141793-120089.jpg') }}')"></div>
+        <div class="carousel-item h-100" style="background-image: url('{{ asset('young-girl-form-construction-worker-with-hard-hat_185193-161752.jpg') }}')"></div>
     </div>
 
     <div class="hero-overlay">

@@ -322,6 +322,8 @@
             border-top-color: var(--accent-green);
             box-shadow: 0 20px 45px rgba(0,0,0,0.1);
         }
+        .text-primary-blue { color: var(--primary-blue) !important; }
+        .fw-900 { font-weight: 900; }
         .section-title {
             font-weight: 900;
             color: var(--primary-blue);
@@ -699,7 +701,7 @@
                         <div class="booking-info-icon"><i class="bi bi-envelope"></i></div>
                         <div>
                             <h6 class="fw-bold mb-1">Official Email</h6>
-                            <p class="mb-0 opacity-75">zamacontractorslimited25@gmail.com</p>
+                            <p class="mb-0 opacity-75">info@zamacontractors.co.tz</p>
                         </div>
                     </div>
                 </div>

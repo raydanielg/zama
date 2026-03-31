@@ -23,7 +23,7 @@
                 <h5 class="small-title text-white text-uppercase small letter-spacing-1 mb-4 text-white">Connect</h5>
                 <p class="small mb-3 text-white-50"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Kinondoni, Dar es Salaam</p>
                 <p class="small mb-3 text-white-50"><i class="bi bi-telephone-fill text-warning me-2"></i> +255 657 099 992</p>
-                <p class="small mb-3 text-white-50"><i class="bi bi-envelope-fill text-warning me-2"></i> zamacontractorslimited25@gmail.com</p>
+                <li><a href="mailto:info@zamacontractors.co.tz" class="footer-link d-flex align-items-center"><i class="bi bi-envelope me-2"></i>info@zamacontractors.co.tz</a></li>
                 <p class="small mb-3 text-white-50"><i class="bi bi-mailbox-fill text-warning me-2"></i> P.O. Box: 11107</p>
             </div>
             <div class="col-lg-3 col-md-4">
