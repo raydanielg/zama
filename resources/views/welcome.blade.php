@@ -574,7 +574,7 @@
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="img-reveal shadow-lg floating-element">
-                        <img src="{{ asset('images/african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool_482257-60095.jpg') }}" class="img-fluid" alt="Zama Construction">
+                        <img src="{{ asset(rawurlencode('building-new-concrete-houses_1398-3932 (1).jpg')) }}" class="img-fluid" alt="Zama Construction">
                     </div>
                 </div>
                 <div class="col-lg-6 ps-lg-5">
@@ -585,10 +585,10 @@
                         <h2 class="section-title text-reveal-content">A Legacy of <span style="color: var(--accent-green);">Excellence</span> & Integrity</h2>
                     </div>
                     <p class="about-text mb-4 animate-text-in">
-                        Established in 2022, <strong>ZAMA CONTRACTORS (T) LIMITED</strong> has rapidly emerged as a powerhouse in Tanzania's construction and engineering landscape. We don't just build structures; we forge partnerships based on trust, quality, and professional rigor.
+                        Founded in 2022, <strong>ZAMA CONTRACTORS (T) LIMITED</strong> is a Tanzanian construction and engineering company committed to delivering dependable workmanship, strong project management, and lasting results.
                     </p>
                     <p class="about-text mb-5 animate-text-in delay-1">
-                        From high-stakes government infrastructure projects for <strong>TEMESA and TANESCO</strong> to specialized industrial maintenance, our team brings world-class precision to every square meter.
+                        We work with both government and private sector clients, providing construction, civil works, technical installations, and maintenance services with a focus on safety, quality, and timely delivery.
                     </p>
                     
                     <div class="row g-4">
@@ -788,7 +788,7 @@
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card bg-white">
-                        <img src="{{ asset('images/african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool_482257-60095.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Civil">
+                        <img src="{{ asset('Building Construction.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Civil">
                         <div class="p-4 text-center">
                             <h5 class="fw-bold mb-3 text-uppercase">Building Construction</h5>
                             <p class="small text-muted mb-0">Residential, commercial, and industrial buildings from foundation to finishing, including renovations and finishing works.</p>
@@ -797,7 +797,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card bg-white">
-                        <img src="{{ asset('images/young-girl-form-construction-worker-with-hard-hat_185193-161752.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Building">
+                        <img src="{{ asset('Building Insulation Materials.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Building">
                         <div class="p-4 text-center">
                             <h5 class="fw-bold mb-3 text-uppercase">Building Insulation Materials</h5>
                             <p class="small text-muted mb-0">High-quality insulation materials for energy efficiency, temperature control, and moisture resistance in buildings.</p>
@@ -806,7 +806,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mx-auto">
                     <div class="service-card bg-white">
-                        <img src="{{ asset('images/smiling-raised-hand-young-african-american-builder-uniform-isolated-blue-background_141793-138852.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Maintenance">
+                        <img src="{{ asset(rawurlencode('Security & Surveillance Systems.jpg')) }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Maintenance">
                         <div class="p-4 text-center">
                             <h5 class="fw-bold mb-3 text-uppercase">Security & Surveillance Systems</h5>
                             <p class="small text-muted mb-0">Installation, repair, and maintenance of CCTV and security systems, including upgrades, troubleshooting, and routine servicing.</p>
