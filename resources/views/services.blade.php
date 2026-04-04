@@ -88,30 +88,27 @@
     <div class="page-header">
         <div class="container">
             <h1 class="display-3 fw-900 mb-3">Our Services</h1>
-            <p class="lead fs-4">Comprehensive Engineering & Construction Solutions</p>
+            <p class="lead fs-4">Reliable Construction, Engineering & Technical Services</p>
         </div>
     </div>
 
     <section class="py-5 mt-5">
         <div class="container">
+            <div class="row mb-4">
+                <div class="col-lg-10 mx-auto text-center">
+                    <p class="service-description mb-0">ZAMA Contractors (T) Limited delivers reliable, high-quality solutions across construction, engineering, and technical services. Our capabilities are designed to meet the demands of both public and private sector clients, ensuring efficiency, durability, and value for money.</p>
+                </div>
+            </div>
             <div class="row">
                 @php
                     $services = [
-                        ['title' => 'Civil Construction Services', 'desc' => 'Tunatoa huduma za ujenzi wa miundombinu kama barabara, madaraja, mifereji ya maji, na miradi mingine ya kiraia kwa kutumia teknolojia za kisasa na viwango vya hali ya juu.', 'icon' => 'bi-cone-striped'],
-                        ['title' => 'Building Construction', 'desc' => 'Tunajihusisha na ujenzi wa majengo ya makazi, biashara, na viwanda kuanzia hatua ya msingi hadi kukamilika (turnkey projects).', 'icon' => 'bi-building'],
-                        ['title' => 'Renovation & Rehabilitation', 'desc' => 'Tunafanya ukarabati na uboreshaji wa majengo na miundombinu ili kurejesha ubora, kuongeza maisha ya matumizi, na kuboresha muonekano.', 'icon' => 'bi-tools'],
-                        ['title' => 'Mechanical & Plant Maintenance', 'desc' => 'Tunatoa huduma za matengenezo na ukarabati wa mitambo ya viwandani, power plants, na mashine mbalimbali ili kuhakikisha zinafanya kazi kwa ufanisi mkubwa.', 'icon' => 'bi-gear-wide-connected'],
-                        ['title' => 'Power Generation Equipment Services', 'desc' => 'Huduma za ukarabati, matengenezo, na usimamizi wa vifaa vya kuzalisha umeme kama turbines, generators, na mifumo mingine ya nishati.', 'icon' => 'bi-lightning-charge'],
-                        ['title' => 'Security & Surveillance Systems Maintenance', 'desc' => 'Ufungaji, ukarabati, na matengenezo ya mifumo ya usalama kama CCTV, access control systems, na vifaa vingine vya ulinzi.', 'icon' => 'bi-shield-lock'],
-                        ['title' => 'Office Equipment Maintenance', 'desc' => 'Matengenezo ya vifaa vya ofisini kama printers, computers, na vifaa vingine vya IT ili kuhakikisha vinafanya kazi bila hitilafu.', 'icon' => 'bi-laptop'],
-                        ['title' => 'Supply of Construction Materials', 'desc' => 'Usambazaji wa vifaa vya ujenzi kama cement, steel, aggregates, pamoja na vifaa vingine vinavyohitajika kwenye miradi.', 'icon' => 'bi-truck'],
-                        ['title' => 'Construction Chemicals & Insulation Materials', 'desc' => 'Tunatoa kemikali za ujenzi (kama waterproofing, adhesives) na vifaa vya insulation kwa ajili ya kulinda majengo dhidi ya joto, unyevu, na uharibifu.', 'icon' => 'bi-droplet-half'],
-                        ['title' => 'Equipment Rental Services', 'desc' => 'Upangishaji wa mashine na vifaa vya ujenzi kama excavators, generators, na tools mbalimbali kwa gharama nafuu.', 'icon' => 'bi-key'],
-                        ['title' => 'Safety Equipment Supply', 'desc' => 'Tunatoa vifaa vya usalama kazini (PPE) kama helmets, gloves, boots, na vifaa vingine vinavyolinda wafanyakazi.', 'icon' => 'bi-safe'],
-                        ['title' => 'Importation of Equipment & Spare Parts', 'desc' => 'Tunasaidira kuagiza vifaa na vipuri kutoka nje ya nchi kwa ubora wa hali ya juu na kwa gharama nafuu.', 'icon' => 'bi-globe'],
-                        ['title' => 'Project Management Services', 'desc' => 'Usimamizi wa miradi kuanzia kupanga, kutekeleza, kufuatilia hadi kukamilisha kwa wakati na ndani ya bajeti.', 'icon' => 'bi-kanban'],
-                        ['title' => 'Estimating & Costing Solutions', 'desc' => 'Tunatoa huduma za makadirio ya gharama za miradi ili kusaidia kupanga bajeti sahihi na kudhibiti matumizi.', 'icon' => 'bi-calculator'],
-                        ['title' => 'Software Solutions for Construction', 'desc' => 'Tunatoa na kushauri matumizi ya software za usimamizi wa miradi na makadirio ili kuongeza ufanisi na uwazi katika kazi.', 'icon' => 'bi-code-square'],
+                        ['title' => 'Building Construction Services', 'desc' => 'We specialize in the construction of residential, commercial, and industrial buildings, delivering structurally sound and high-quality projects from foundation to finishing. Our scope includes office buildings, residential houses, renovations, and finishing works such as roofing, plastering, tiling, and painting.', 'icon' => 'bi-building'],
+                        ['title' => 'Supply of Building Insulation Materials', 'desc' => 'We provide high-quality insulation materials that improve energy efficiency, temperature control, and moisture resistance in buildings, including thermal insulation boards, roofing insulation solutions, and moisture-resistant wall systems.', 'icon' => 'bi-layers'],
+                        ['title' => 'Security & Surveillance Systems (Installation, Repair & Maintenance)', 'desc' => 'We offer installation, repair, and maintenance of CCTV and security systems to ensure safety and continuous monitoring of facilities, including system upgrades, fault troubleshooting, and routine servicing of surveillance equipment.', 'icon' => 'bi-camera-video'],
+                        ['title' => 'Power Generation Plants & Equipment Maintenance', 'desc' => 'We provide professional maintenance and repair services for power generation equipment, including routine servicing of generators, fault diagnosis and repair of mechanical and electrical systems, as well as supply and replacement of critical components.', 'icon' => 'bi-lightning-charge'],
+                        ['title' => 'Civil Engineering Works', 'desc' => 'Our civil works include road construction and rehabilitation, site clearing, grading, leveling, and drainage system installation, ensuring durable and reliable infrastructure solutions.', 'icon' => 'bi-cone-striped'],
+                        ['title' => 'Supply of Motor Vehicle Spare Parts', 'desc' => 'We supply high-quality motor vehicle spare parts, including engine components, brake systems, filters, and suspension parts, ensuring reliability and optimal performance of vehicles.', 'icon' => 'bi-car-front'],
+                        ['title' => 'Supply of Hardware and Building Materials', 'desc' => 'We provide a wide range of construction and hardware materials, including cement, steel, aggregates, electrical fittings, plumbing materials, and general tools to support efficient project execution.', 'icon' => 'bi-box-seam'],
                     ];
                 @endphp
 

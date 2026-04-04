@@ -3,15 +3,11 @@
     <div class="carousel-indicators z-3 mb-5">
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active rounded-circle" style="width: 12px; height: 12px;"></button>
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" class="rounded-circle" style="width: 12px; height: 12px;"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" class="rounded-circle" style="width: 12px; height: 12px;"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" class="rounded-circle" style="width: 12px; height: 12px;"></button>
     </div>
     
     <div class="carousel-inner h-100">
-        <div class="carousel-item active h-100" style="background-image: url('{{ asset('african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool.jpg') }}')"></div>
-        <div class="carousel-item h-100" style="background-image: url('{{ asset('medium-shot-plus-size-woman-working-construction.jpg') }}')"></div>
-        <div class="carousel-item h-100" style="background-image: url('{{ asset('smiling-young-builder-man-uniform-with-safety-helmet-gesturing-victory-sign-isolated-white-wall-with-copy-space_141793-120089.jpg') }}')"></div>
-        <div class="carousel-item h-100" style="background-image: url('{{ asset('young-girl-form-construction-worker-with-hard-hat_185193-161752.jpg') }}')"></div>
+        <div class="carousel-item active h-100" style="background-image: url('{{ asset('power-plant-construction.jpg') }}')"></div>
+        <div class="carousel-item h-100" style="background-image: url('{{ asset('view-building-concrete-house.jpg') }}')"></div>
     </div>
 
     <div class="hero-overlay">

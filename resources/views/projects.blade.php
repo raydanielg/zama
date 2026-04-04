@@ -156,70 +156,57 @@
     <section class="py-5">
         <div class="container">
             <div class="timeline">
-                <!-- 2026 -->
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <span class="year-label">January 2026</span>
-                        <h4 class="project-title">Chain Link Fence Repair</h4>
-                        <span class="client-name">Client: TANESCO – Kinyerezi II Gas Plant</span>
-                        <p class="project-desc">Tulitekeleza ukarabati wa uzio wa usalama (chain link fence) kwa lengo la kuimarisha ulinzi wa miundombinu muhimu ya uzalishaji umeme.</p>
-                    </div>
-                </div>
-
-                <!-- 2025 -->
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year-label">October 2025</span>
-                        <h4 class="project-title">External Road Rehabilitation</h4>
-                        <span class="client-name">Client: Tanzania Ports Authority (TPA) – Mtwara Port</span>
-                        <p class="project-desc">Tuliboresha barabara ya nje ya Gate No. 3 kwa kuongeza ubora wa miundombinu na kurahisisha usafirishaji wa mizigo bandarini.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year-label">August 2025</span>
-                        <h4 class="project-title">Supply of Mechanical & Civil Materials</h4>
-                        <span class="client-name">Client: TANESCO – Mtwara II Gas Plant</span>
-                        <p class="project-desc">Tulitoa vifaa mbalimbali vya mitambo na ujenzi kwa ajili ya kusaidia shughuli za uzalishaji na matengenezo ya miundombinu ya nishati.</p>
+                        <span class="year-label">8th Sep 2025 – 7th Jan 2026</span>
+                        <h4 class="project-title">Supply of Assorted Mechanical and Civil Materials – Mtwara II Gas Plant (TANESCO)</h4>
+                        <span class="client-name">Location: Mtwara | Client: TANESCO – Mtwara Gas Plant</span>
+                        <p class="project-desc">Supply and delivery of assorted mechanical and civil engineering materials to support ongoing operations and maintenance activities at the Mtwara II Gas Plant, ensuring timely availability of quality materials in line with client specifications.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <span class="year-label">June 2025</span>
-                        <h4 class="project-title">Gas Turbine Workshop Renovation</h4>
-                        <span class="client-name">Client: TANESCO – Kinyerezi I Gas Power Plant</span>
-                        <p class="project-desc">Tulitoa vifaa vya ujenzi kwa ajili ya ukarabati wa workshop ya matengenezo ya gas turbine, kuhakikisha mazingira bora ya kazi na usalama.</p>
+                        <span class="year-label">22nd Jan 2026 – 22nd Jun 2026</span>
+                        <h4 class="project-title">Repair of Chain Link Fence – Kinyerezi II Gas Plant (TANESCO)</h4>
+                        <span class="client-name">Location: Dar es Salaam | Client: TANESCO – Kinyerezi II Gas Plant</span>
+                        <p class="project-desc">Repair and reinforcement of the perimeter chain link fence to enhance site security, including replacement of damaged sections, structural strengthening, and alignment of fencing systems.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <span class="year-label">May 2025</span>
-                        <h4 class="project-title">Road Potholes Repair</h4>
-                        <span class="client-name">Client: Tanzania Ports Authority (TPA) – Mtwara Port</span>
-                        <p class="project-desc">Tulifanya ukarabati wa mashimo ya barabara (potholes) katika eneo la Shed No. 3 ili kuboresha usalama na ufanisi wa usafiri.</p>
+                        <span class="year-label">17th Oct 2025 – 17th Dec 2025</span>
+                        <h4 class="project-title">Rehabilitation of External Road – Gate No. 3, Mtwara Port</h4>
+                        <span class="client-name">Location: Mtwara | Client: Tanzania Ports Authority (TPA)</span>
+                        <p class="project-desc">Rehabilitation works on the external access road at Gate No. 3, including grading, leveling, and surface improvement to ensure smooth traffic flow and durability of the road infrastructure.</p>
                     </div>
                 </div>
 
-                <!-- 2024 -->
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <span class="year-label">June 2024</span>
-                        <h4 class="project-title">Road Maintenance Works</h4>
-                        <span class="client-name">Client: Tanzania Ports Authority (TPA) – Mtwara Port</span>
-                        <p class="project-desc">Tulitekeleza matengenezo ya barabara ikiwa ni pamoja na kuziba mashimo na kuboresha hali ya barabara kwa matumizi ya kila siku.</p>
+                        <span class="year-label">9th Aug 2025 – 8th Sep 2025</span>
+                        <h4 class="project-title">Supply of Assorted Mechanical and Civil Materials – Mtwara II Gas Plant (TANESCO)</h4>
+                        <span class="client-name">Location: Mtwara | Client: TANESCO – Mtwara Gas Plant</span>
+                        <p class="project-desc">Procurement and supply of essential mechanical and civil materials to support plant operations, ensuring compliance with technical specifications and timely delivery.</p>
                     </div>
                 </div>
 
-                <!-- 2023 -->
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <span class="year-label">October 2023</span>
-                        <h4 class="project-title">Major Bridge Repair (Subcontract)</h4>
-                        <span class="client-name">Project: Senga Bridge – Senga–Sungusila–Ikoni Road</span>
-                        <p class="project-desc">Tulishiriki kama mkandarasi mdogo katika ukarabati mkubwa wa daraja, tukichangia kuboresha miundombinu ya usafiri katika eneo husika.</p>
+                        <span class="year-label">6th Jun 2025 – 5th Jul 2025</span>
+                        <h4 class="project-title">Site Preparation – Improvement of Ex-STAMICO Yard, Mtwara Port</h4>
+                        <span class="client-name">Location: Mtwara | Client: Tanzania Ports Authority (TPA)</span>
+                        <p class="project-desc">Site clearing, leveling, and ground improvement works at the former STAMICO yard to prepare the area for operational use, ensuring proper drainage and surface stability.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="year-label">23rd Jun 2025 – 22nd Jul 2025</span>
+                        <h4 class="project-title">Site Preparation – Improvement of Ex-STAMICO Yard, Mtwara Port</h4>
+                        <span class="client-name">Location: Mtwara | Client: Tanzania Ports Authority (TPA)</span>
+                        <p class="project-desc">Execution of site preparation activities including clearing, grading, and compaction works to improve usability and structural integrity of the yard area.</p>
                     </div>
                 </div>
             </div>

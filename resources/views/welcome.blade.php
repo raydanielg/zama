@@ -367,6 +367,79 @@
             background: var(--accent-green);
             transform: rotate(-10deg) scale(1.1);
         }
+
+        .info-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-top: 4px solid rgba(0, 51, 102, 0.15);
+        }
+        .info-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent-green);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+        }
+        .info-card-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .pill-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.06), rgba(46, 139, 87, 0.06));
+            border: 1px solid rgba(46, 139, 87, 0.15);
+        }
+        .pill-item i {
+            color: var(--accent-green);
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+        .org-chart {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        .org-node {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.08), rgba(46, 139, 87, 0.04));
+            border: 1px solid rgba(0, 51, 102, 0.12);
+            border-radius: 16px;
+            padding: 14px 16px;
+        }
+        .org-node .label {
+            font-weight: 900;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        .org-node .meta {
+            color: #555;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .org-level {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        @media (min-width: 992px) {
+            .org-level {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
         .stat-item h2 {
             font-weight: 900;
             color: var(--primary-blue);
@@ -545,14 +618,14 @@
                     <div class="vision-mission-card">
                         <div class="icon-box"><i class="bi bi-eye"></i></div>
                         <h4 class="fw-bold mb-3 text-uppercase">Our Vision</h4>
-                        <p class="text-muted">To be the most prominent and respected construction and engineering brand across East Africa, setting benchmarks for quality and innovation.</p>
+                        <p class="text-muted">To be a leading and trusted construction and engineering company in Tanzania, recognized for excellence, innovation, and reliability.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="vision-mission-card">
                         <div class="icon-box"><i class="bi bi-bullseye"></i></div>
                         <h4 class="fw-bold mb-3 text-uppercase">Our Mission</h4>
-                        <p class="text-muted">To provide high-quality engineering solutions at reasonable costs, ensuring timely delivery through a highly motivated and professional workforce.</p>
+                        <p class="text-muted">To deliver high-quality construction and technical services that meet client expectations through professionalism, integrity, and timely project execution.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -560,11 +633,143 @@
                         <div class="icon-box"><i class="bi bi-shield-check"></i></div>
                         <h4 class="fw-bold mb-3 text-uppercase">Core Values</h4>
                         <ul class="list-unstyled text-muted">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Professional Integrity</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Unwavering Quality</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Timely Delivery</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Client Satisfaction</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Integrity – We uphold honesty and transparency in all our operations</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Quality – We are committed to delivering high-standard services</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Safety – We prioritize safety in all our projects</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Professionalism – We maintain excellence in execution and conduct</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Customer Satisfaction – We focus on meeting and exceeding client expectations</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="welcome-badge">Company Profile</div>
+                    <h3 class="section-title mb-0">Our Strength, <span style="color: var(--accent-green);">Capability</span> & Team</h3>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-12">
+                    
+                    <div class="info-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width:60px;height:60px;border-radius:16px;font-size:1.6rem;"><i class="bi bi-award"></i></div>
+                            <div>
+                                <div class="info-card-title mb-0">Compliance &amp; Registration</div>
+                                <div class="text-muted">ZAMA Contractors (T) Limited operates in full compliance with Tanzanian regulations and is duly registered with relevant authorities.</div>
+                            </div>
+                        </div>
+
+                        @php
+                            $certificates = [
+                                ['title' => 'BUILDING CONTRACTOR CLASS V 26', 'file' => 'BUILDING CONTRACTOR CLASS V 26.pdf'],
+                                ['title' => 'CERTFICATE OF CHANGE', 'file' => 'CERTFICATE OF CHANGE.pdf'],
+                                ['title' => 'CERTIFICATE OF REGISTRATION CIVIL CONTRACTORS', 'file' => 'CERTIFICATE OF REGISTRATION CIVIL CONTRACTORS.pdf'],
+                                ['title' => 'CERTIFICATE REGISTRATION BUILDING CONTRACTORS', 'file' => 'CERTIFICATE REGISTRATION BUILDING CONTRACTORS.pdf'],
+                                ['title' => 'CIVIL CONTRACTOR CLASS V 26', 'file' => 'CIVIL CONTRACTOR CLASS V 26.pdf'],
+                                ['title' => 'ZAMA VAT Certificate', 'file' => 'ZAMA VAT Certificate.pdf'],
+                            ];
+                        @endphp
+
+                        <div class="row g-3 mt-2">
+                            @foreach($certificates as $cert)
+                                <div class="col-md-4">
+                                    <div class="pill-item h-100" style="align-items:center; justify-content: space-between;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf"></i>
+                                            <div>
+                                                <div class="fw-bold" style="color: var(--primary-blue);">{{ $cert['title'] }}</div>
+                                                <div class="text-muted small">PDF Certificate</div>
+                                            </div>
+                                        </div>
+                                        <a href="{{ asset(rawurlencode($cert['file'])) }}" target="_blank" class="btn btn-sm" style="background: var(--primary-blue); color: #fff; font-weight: 800; border-radius: 12px; padding: 8px 12px;">View</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width:60px;height:60px;border-radius:16px;font-size:1.6rem;"><i class="bi bi-people"></i></div>
+                            <div>
+                                <div class="info-card-title mb-0">Clients</div>
+                                <div class="text-muted">We have worked with reputable organizations, including:</div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-3">
+                            <div class="pill-item"><i class="bi bi-check2-circle"></i><div><strong>Tanzania Ports Authority (TPA)</strong></div></div>
+                            <div class="pill-item"><i class="bi bi-check2-circle"></i><div><strong>Tanzania Electric Supply Company Limited (TANESCO)</strong></div></div>
+                            <div class="pill-item"><i class="bi bi-check2-circle"></i><div><strong>Tanzania Electrical, Mechanical and Electronics Services Agency (TEMESA)</strong></div></div>
+                            <div class="pill-item"><i class="bi bi-check2-circle"></i><div><strong>Private sector clients</strong></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width:60px;height:60px;border-radius:16px;font-size:1.6rem;"><i class="bi bi-patch-check"></i></div>
+                            <div>
+                                <div class="info-card-title mb-0">Why Choose Us</div>
+                                <div class="text-muted">What sets ZAMA Contractors apart:</div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-3">
+                            <div class="pill-item"><i class="bi bi-star-fill"></i><div>Proven experience with government and private clients</div></div>
+                            <div class="pill-item"><i class="bi bi-star-fill"></i><div>Commitment to quality and timely delivery</div></div>
+                            <div class="pill-item"><i class="bi bi-star-fill"></i><div>Skilled and dedicated workforce</div></div>
+                            <div class="pill-item"><i class="bi bi-star-fill"></i><div>Competitive pricing</div></div>
+                            <div class="pill-item"><i class="bi bi-star-fill"></i><div>Strong technical capability</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width:60px;height:60px;border-radius:16px;font-size:1.6rem;"><i class="bi bi-diagram-3"></i></div>
+                            <div>
+                                <div class="info-card-title mb-0">Organizational Structure</div>
+                                <div class="text-muted">Our team is composed of qualified and experienced personnel:</div>
+                            </div>
+                        </div>
+
+                        <div class="org-chart">
+                            <div class="org-node"><span class="label">Company Director</span><span class="meta">Leadership & Strategy</span></div>
+                            <div class="org-level">
+                                <div class="org-node"><span class="label">Technical Engineers</span><span class="meta">Engineering & Design</span></div>
+                                <div class="org-node"><span class="label">Project Supervisors</span><span class="meta">Site Oversight</span></div>
+                            </div>
+                            <div class="org-level">
+                                <div class="org-node"><span class="label">Skilled Technicians</span><span class="meta">Execution & Maintenance</span></div>
+                                <div class="org-node"><span class="label">Administrative Staff</span><span class="meta">Operations & Support</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width:60px;height:60px;border-radius:16px;font-size:1.6rem;"><i class="bi bi-tools"></i></div>
+                            <div>
+                                <div class="info-card-title mb-0">Equipment & Capacity</div>
+                                <div class="text-muted">Tools, machinery, logistics and technical expertise to execute projects efficiently.</div>
+                            </div>
+                        </div>
+
+                        <p class="about-text mb-3" style="font-size: 1.05rem;">ZAMA Contractors (T) Limited is equipped with the necessary tools, machinery, and technical expertise to execute projects of various sizes efficiently and professionally. Our equipment supports construction, civil works, electrical installations, and maintenance services.</p>
+                        <p class="about-text mb-3" style="font-size: 1.05rem;">Our capacity includes the use of modern and well-maintained equipment such as concrete mixers, welding machines, power tools, and compaction equipment for civil and building works. We also utilize electrical testing devices, cable installation tools, and diagnostic equipment for power systems and technical services.</p>
+                        <p class="about-text mb-0" style="font-size: 1.05rem;">In addition, the company is supported by transportation and logistics resources, enabling timely delivery of materials and equipment to project sites. Our team of skilled technicians and operators ensures that all equipment is used effectively, safely, and in accordance with industry standards.</p>
                     </div>
                 </div>
             </div>
@@ -577,15 +782,15 @@
             <div class="text-center mb-5">
                 <div class="welcome-badge">Our Expertise</div>
                 <h2 class="section-title">Specialized Construction & <span style="color: var(--accent-green);">Engineering Services</span></h2>
-                <p class="about-text mx-auto" style="max-width: 800px;">We offer a comprehensive range of services tailored to meet the complex needs of modern infrastructure and industrial projects.</p>
+                <p class="about-text mx-auto" style="max-width: 800px;">ZAMA Contractors (T) Limited delivers reliable, high-quality solutions across construction, engineering, and technical services. Our capabilities are designed to meet the demands of both public and private sector clients, ensuring efficiency, durability, and value for money.</p>
             </div>
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card bg-white">
                         <img src="{{ asset('images/african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool_482257-60095.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Civil">
                         <div class="p-4 text-center">
-                            <h5 class="fw-bold mb-3 text-uppercase">Civil Construction</h5>
-                            <p class="small text-muted mb-0">Ujenzi wa miundombinu kama barabara, madaraja, na miradi ya kiraia kwa teknolojia za kisasa.</p>
+                            <h5 class="fw-bold mb-3 text-uppercase">Building Construction</h5>
+                            <p class="small text-muted mb-0">Residential, commercial, and industrial buildings from foundation to finishing, including renovations and finishing works.</p>
                         </div>
                     </div>
                 </div>
@@ -593,8 +798,8 @@
                     <div class="service-card bg-white">
                         <img src="{{ asset('images/young-girl-form-construction-worker-with-hard-hat_185193-161752.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Building">
                         <div class="p-4 text-center">
-                            <h5 class="fw-bold mb-3 text-uppercase">Building Construction</h5>
-                            <p class="small text-muted mb-0">Ujenzi wa majengo ya makazi, biashara, na viwanda kuanzia msingi hadi kukamilika.</p>
+                            <h5 class="fw-bold mb-3 text-uppercase">Building Insulation Materials</h5>
+                            <p class="small text-muted mb-0">High-quality insulation materials for energy efficiency, temperature control, and moisture resistance in buildings.</p>
                         </div>
                     </div>
                 </div>
@@ -602,14 +807,14 @@
                     <div class="service-card bg-white">
                         <img src="{{ asset('images/smiling-raised-hand-young-african-american-builder-uniform-isolated-blue-background_141793-138852.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Maintenance">
                         <div class="p-4 text-center">
-                            <h5 class="fw-bold mb-3 text-uppercase">Plant Maintenance</h5>
-                            <p class="small text-muted mb-0">Matengenezo ya mitambo ya viwandani na power plants ili kuhakikisha ufanisi mkubwa.</p>
+                            <h5 class="fw-bold mb-3 text-uppercase">Security & Surveillance Systems</h5>
+                            <p class="small text-muted mb-0">Installation, repair, and maintenance of CCTV and security systems, including upgrades, troubleshooting, and routine servicing.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-5">
-                <a href="{{ route('services') }}" class="cta-btn cta-primary shadow-lg">VIEW ALL 15+ SERVICES <i class="bi bi-arrow-right-circle ms-2"></i></a>
+                <a href="{{ route('services') }}" class="cta-btn cta-primary shadow-lg">VIEW ALL 7+ SERVICES <i class="bi bi-arrow-right-circle ms-2"></i></a>
             </div>
         </div>
     </section>
@@ -629,12 +834,12 @@
                         <div class="position-relative overflow-hidden" style="height: 250px;">
                             <img src="{{ asset('images/african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool_482257-60095.jpg') }}" class="card-img-top h-100 w-100 object-fit-cover transition" alt="Kinyerezi II">
                             <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-success text-uppercase py-2 px-3">Jan 2026</span>
+                                <span class="badge bg-success text-uppercase py-2 px-3">Jan–Jun 2026</span>
                             </div>
                         </div>
                         <div class="p-4">
-                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Kinyerezi II Fence</h5>
-                            <p class="small text-muted mb-0">Security fencing and repair works for TANESCO Kinyerezi II Gas Plant.</p>
+                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Kinyerezi II Fence Repair</h5>
+                            <p class="small text-muted mb-0">Repair and reinforcement of chain link fence to enhance site security for TANESCO Kinyerezi II Gas Plant.</p>
                         </div>
                     </div>
                 </div>
@@ -647,8 +852,8 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Mtwara Port Road</h5>
-                            <p class="small text-muted mb-0">Reconstruction of the external road at Gate No. 3, Mtwara Port for TPA.</p>
+                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Mtwara Port External Road</h5>
+                            <p class="small text-muted mb-0">Rehabilitation of the external road at Gate No. 3, Mtwara Port for Tanzania Ports Authority (TPA).</p>
                         </div>
                     </div>
                 </div>
@@ -657,12 +862,12 @@
                         <div class="position-relative overflow-hidden" style="height: 250px;">
                             <img src="{{ asset('images/young-girl-form-construction-worker-with-hard-hat_185193-161752.jpg') }}" class="card-img-top h-100 w-100 object-fit-cover transition" alt="Industrial Supply">
                             <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-warning text-dark text-uppercase py-2 px-3">Aug 2025</span>
+                                <span class="badge bg-warning text-dark text-uppercase py-2 px-3">Sep 2025</span>
                             </div>
                         </div>
                         <div class="p-4">
-                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Industrial Supply</h5>
-                            <p class="small text-muted mb-0">Supply of assorted mechanical spares at Mtwara II Gas Plant for TANESCO.</p>
+                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Mtwara II Materials Supply</h5>
+                            <p class="small text-muted mb-0">Supply and delivery of assorted mechanical and civil materials for TANESCO Mtwara II Gas Plant.</p>
                         </div>
                     </div>
                 </div>
