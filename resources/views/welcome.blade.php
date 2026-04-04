@@ -831,45 +831,30 @@
 
             <div class="row mt-5 g-4 mb-5">
                 <div class="col-md-4">
-                    <div class="service-card bg-white h-100 shadow-sm border-0">
-                        <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img src="{{ asset('images/african-american-carpenter-hitting-walls-with-hammer-using-manual-instrument-renovation-reconstruction-work-male-constructor-overalls-holding-jackhammer-mullet-tool_482257-60095.jpg') }}" class="card-img-top h-100 w-100 object-fit-cover transition" alt="Kinyerezi II">
-                            <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-success text-uppercase py-2 px-3">Jan–Jun 2026</span>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Kinyerezi II Fence Repair</h5>
-                            <p class="small text-muted mb-0">Repair and reinforcement of chain link fence to enhance site security for TANESCO Kinyerezi II Gas Plant.</p>
-                        </div>
+                    <div class="info-card h-100">
+                        <span class="badge bg-success text-uppercase py-2 px-3 mb-3">Jan–Jun 2026</span>
+                        <h5 class="fw-bold text-uppercase mb-3" style="color: var(--primary-blue);">Kinyerezi II Fence Repair</h5>
+                        <p class="small text-muted mb-0">Repair and reinforcement of chain link fence to enhance site security for TANESCO Kinyerezi II Gas Plant.</p>
+                        <hr class="my-3 opacity-10">
+                        <div class="small fw-bold text-primary-blue"><i class="bi bi-geo-alt me-2"></i>Dar es Salaam</div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-card bg-white h-100 shadow-sm border-0">
-                        <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img src="{{ asset('images/african-american-logistics-managers-team-dicussing-goods-distribution-warehouse-reception-post-office-men-woman-workers-planning-stock-supply-while-chatting-counter-desk_482257-59698.jpg') }}" class="card-img-top h-100 w-100 object-fit-cover transition" alt="Mtwara Port">
-                            <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-primary text-uppercase py-2 px-3">Oct 2025</span>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Mtwara Port External Road</h5>
-                            <p class="small text-muted mb-0">Rehabilitation of the external road at Gate No. 3, Mtwara Port for Tanzania Ports Authority (TPA).</p>
-                        </div>
+                    <div class="info-card h-100">
+                        <span class="badge bg-primary text-uppercase py-2 px-3 mb-3">Oct 2025</span>
+                        <h5 class="fw-bold text-uppercase mb-3" style="color: var(--primary-blue);">Mtwara Port External Road</h5>
+                        <p class="small text-muted mb-0">Rehabilitation of the external road at Gate No. 3, Mtwara Port for Tanzania Ports Authority (TPA).</p>
+                        <hr class="my-3 opacity-10">
+                        <div class="small fw-bold text-primary-blue"><i class="bi bi-geo-alt me-2"></i>Mtwara</div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-card bg-white h-100 shadow-sm border-0">
-                        <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img src="{{ asset('images/young-girl-form-construction-worker-with-hard-hat_185193-161752.jpg') }}" class="card-img-top h-100 w-100 object-fit-cover transition" alt="Industrial Supply">
-                            <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-warning text-dark text-uppercase py-2 px-3">Sep 2025</span>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h5 class="fw-bold text-uppercase mb-2" style="color: var(--primary-blue);">Mtwara II Materials Supply</h5>
-                            <p class="small text-muted mb-0">Supply and delivery of assorted mechanical and civil materials for TANESCO Mtwara II Gas Plant.</p>
-                        </div>
+                    <div class="info-card h-100">
+                        <span class="badge bg-warning text-dark text-uppercase py-2 px-3 mb-3">Sep 2025</span>
+                        <h5 class="fw-bold text-uppercase mb-3" style="color: var(--primary-blue);">Mtwara II Materials Supply</h5>
+                        <p class="small text-muted mb-0">Supply and delivery of assorted mechanical and civil materials for TANESCO Mtwara II Gas Plant.</p>
+                        <hr class="my-3 opacity-10">
+                        <div class="small fw-bold text-primary-blue"><i class="bi bi-geo-alt me-2"></i>Mtwara</div>
                     </div>
                 </div>
             </div>
