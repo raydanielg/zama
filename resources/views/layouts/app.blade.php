@@ -7,8 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{ config('app.name', 'Zama Contractors') }}</title>
+    <meta name="description" content="ZAMA Contractors (T) Limited - Professional construction and engineering services in Tanzania.">
+    <meta property="og:image" content="{{ asset('medium-shot-plus-size-woman-working-construction.jpg') }}">
     <link rel="icon" type="image/png" href="{{ asset('crane_9689068.png') }}">
 
     <!-- Fonts -->

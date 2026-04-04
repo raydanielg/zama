@@ -3,7 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zama Contractors (T) Limited | Professional Construction & Engineering</title>
+    <title>Zama Contractors (T) Limited | Professional Construction & Engineering in Tanzania</title>
+    <meta name="description" content="ZAMA Contractors (T) Limited is a leading Tanzanian construction and engineering company specializing in building construction, civil works, technical installations, and maintenance services.">
+    <meta name="keywords" content="construction Tanzania, engineering Tanzania, building contractors, civil works, ZAMA Contractors, industrial maintenance, power plant maintenance">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="Zama Contractors (T) Limited | Engineering Excellence">
+    <meta property="og:description" content="Leading construction and engineering solutions in Tanzania. Delivering quality building, civil, and technical services since 2022.">
+    <meta property="og:image" content="{{ asset('medium-shot-plus-size-woman-working-construction.jpg') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="Zama Contractors (T) Limited">
+    <meta property="twitter:description" content="Leading construction and engineering solutions in Tanzania. Delivering quality building, civil, and technical services.">
+    <meta property="twitter:image" content="{{ asset('medium-shot-plus-size-woman-working-construction.jpg') }}">
+
     <link rel="icon" type="image/png" href="{{ asset('crane_9689068.png') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

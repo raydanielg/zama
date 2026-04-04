@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Our Services | Zama Contractors (T) Limited</title>
+    <title>Our Services | Zama Contractors (T) Limited | Engineering & Construction Tanzania</title>
+    <meta name="description" content="Explore the wide range of construction and engineering services offered by ZAMA Contractors (T) Limited, from building and civil works to power plant maintenance.">
+    <meta property="og:title" content="Our Services | Zama Contractors (T) Limited">
+    <meta property="og:description" content="Professional construction, engineering, and technical services in Tanzania.">
+    <meta property="og:image" content="{{ asset('medium-shot-plus-size-woman-working-construction.jpg') }}">
     <link rel="icon" type="image/png" href="{{ asset('crane_9689068.png') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
