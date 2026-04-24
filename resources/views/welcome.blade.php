@@ -30,19 +30,48 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         :root {
-            --primary-blue: #003366; /* Deep Professional Blue */
-            --accent-green: #2e8b57; /* Professional Sea Green */
+            --primary-blue: #003366;
+            --accent-green: #2e8b57;
             --light-bg: #f4f7f6;
             --dark-text: #1a1a1a;
             --header-bg: #ffffff;
             --cta-blue: #0056b3;
             --cta-green: #1e7e34;
+            --gold-accent: #d4af37;
+            --neon-glow: rgba(46, 139, 87, 0.6);
         }
         body {
             font-family: 'Nunito', sans-serif;
             scroll-behavior: smooth;
             overflow-x: hidden;
             background-color: var(--light-bg);
+        }
+
+        /* Particle Background Effect */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float-particle 15s infinite ease-in-out;
+        }
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
         
         /* Header Styling */
@@ -93,6 +122,25 @@
         }
         .nav-link:hover:not(.active) {
             color: var(--accent-green) !important;
+            transform: translateY(-2px);
+        }
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--accent-green);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 60%;
         }
 
         .inquiry-btn {
@@ -107,8 +155,26 @@
             transition: all 0.3s ease;
         }
         .inquiry-btn:hover {
-            background-color: var(--accent-green);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--accent-green), var(--primary-blue));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(46, 139, 87, 0.4);
+        }
+        .inquiry-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .inquiry-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .inquiry-btn:hover::before {
+            left: 100%;
         }
 
         /* Hero Section Enhancements */
@@ -116,6 +182,16 @@
             position: relative;
             height: 90vh;
             overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(46, 139, 87, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 51, 102, 0.2) 0%, transparent 50%);
+            z-index: 5;
+            pointer-events: none;
         }
         .carousel-item {
             height: 90vh;
@@ -126,7 +202,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 51, 102, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 51, 102, 0.5) 50%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        .carousel-item {
+            animation: ken-burns 20s ease-in-out infinite alternate;
+        }
+        @keyframes ken-burns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
         .hero-overlay {
             position: absolute;
@@ -145,7 +228,14 @@
             font-weight: 900;
             line-height: 1;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            text-shadow: 
+                2px 4px 10px rgba(0,0,0,0.5),
+                0 0 40px rgba(46, 139, 87, 0.3),
+                0 0 80px rgba(0, 51, 102, 0.2);
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .hero-content p {
             font-size: 1.4rem;
@@ -182,6 +272,12 @@
             font-size: 1.8rem;
             margin-right: 15px;
             color: var(--accent-green);
+            filter: drop-shadow(0 0 10px rgba(46, 139, 87, 0.5));
+            animation: icon-pulse 2s ease-in-out infinite;
+        }
+        @keyframes icon-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         .feature-single h6 {
             font-weight: 800;
@@ -234,9 +330,33 @@
             border: 2px solid white;
         }
         .cta-btn:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             color: white;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(46, 139, 87, 0.4);
+        }
+        .cta-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        .cta-btn:hover::after {
+            animation: shine-effect 0.8s ease;
+        }
+        @keyframes shine-effect {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
         }
         .cta-primary:hover {
             background-color: var(--primary-blue);
@@ -252,7 +372,7 @@
             position: fixed;
             bottom: 40px;
             right: 40px;
-            background-color: #25d366;
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
             width: 65px;
             height: 65px;
@@ -262,12 +382,18 @@
             justify-content: center;
             font-size: 35px;
             z-index: 1000;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5), 0 0 30px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
         }
         .whatsapp-float:hover {
             transform: scale(1.15) rotate(15deg);
             color: white;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6), 0 0 50px rgba(37, 211, 102, 0.4);
+        }
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5), 0 0 0 20px rgba(37, 211, 102, 0); }
         }
 
         /* Welcome / About Section */
@@ -277,8 +403,8 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 25px;
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(46, 139, 87, 0.1));
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.15), rgba(46, 139, 87, 0.15));
             color: var(--primary-blue);
             border-radius: 50px;
             font-weight: 900;
@@ -286,9 +412,16 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 25px;
-            border: 1px solid rgba(46, 139, 87, 0.2);
+            border: 2px solid rgba(46, 139, 87, 0.3);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.1);
+            transition: all 0.3s ease;
+        }
+        .welcome-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.2);
+            border-color: rgba(46, 139, 87, 0.5);
         }
         .welcome-badge::before {
             content: '';
@@ -302,8 +435,46 @@
         }
         @keyframes pulse-green {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 139, 87, 0.7); }
-            70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(46, 139, 87, 0); }
+            70% { transform: scale(1.2); box-shadow: 0 0 0 15px rgba(46, 139, 87, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 139, 87, 0); }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .text-reveal-wrapper {
@@ -329,17 +500,45 @@
         }
 
         .stat-card-modern {
-            background: #fff;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            padding: 30px 25px;
+            border-radius: 24px;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.08),
+                0 5px 15px rgba(0,0,0,0.04);
             border-top: 4px solid var(--primary-blue);
-            transition: all 0.4s ease;
+            border-bottom: 4px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.03), rgba(46, 139, 87, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .stat-card-modern:hover::before {
+            opacity: 1;
         }
         .stat-card-modern:hover {
-            transform: translateY(-10px) scale(1.05);
+            transform: translateY(-15px) scale(1.05);
             border-top-color: var(--accent-green);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+            border-bottom-color: var(--accent-green);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.12),
+                0 10px 20px rgba(46, 139, 87, 0.15);
+        }
+        .stat-card-modern h2 {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .text-primary-blue { color: var(--primary-blue) !important; }
         .fw-900 { font-weight: 900; }
@@ -357,22 +556,41 @@
             color: #555;
         }
         .vision-mission-card {
-            background: #fff;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.06),
+                0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
             border-bottom: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .vision-mission-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-green), var(--primary-blue));
+            transition: width 0.4s ease;
+        }
+        .vision-mission-card:hover::after {
+            width: 100%;
         }
         .vision-mission-card:hover {
-            transform: translateY(-10px);
-            border-bottom-color: var(--accent-green);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.1),
+                0 15px 30px rgba(46, 139, 87, 0.1);
         }
         .icon-box {
             width: 70px;
             height: 70px;
-            background: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue), #004080);
             color: #fff;
             border-radius: 20px;
             display: flex;
@@ -380,26 +598,47 @@
             justify-content: center;
             font-size: 2rem;
             margin-bottom: 25px;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.3);
         }
         .vision-mission-card:hover .icon-box {
-            background: var(--accent-green);
-            transform: rotate(-10deg) scale(1.1);
+            background: linear-gradient(135deg, var(--accent-green), #1e6b45);
+            transform: rotate(-10deg) scale(1.15);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
         }
 
         .info-card {
-            background: #fff;
-            border-radius: 20px;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 24px;
             padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.06),
+                0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
-            border-top: 4px solid rgba(0, 51, 102, 0.15);
+            border-top: 4px solid rgba(0, 51, 102, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+        .info-card:hover::before {
+            left: 100%;
         }
         .info-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px) scale(1.01);
             border-top-color: var(--accent-green);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.1),
+                0 15px 30px rgba(46, 139, 87, 0.1);
         }
         .info-card-title {
             font-weight: 900;
@@ -412,10 +651,17 @@
             display: flex;
             gap: 12px;
             align-items: flex-start;
-            padding: 12px 14px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.06), rgba(46, 139, 87, 0.06));
-            border: 1px solid rgba(46, 139, 87, 0.15);
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.08), rgba(46, 139, 87, 0.08));
+            border: 1px solid rgba(46, 139, 87, 0.2);
+            transition: all 0.3s ease;
+        }
+        .pill-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.12), rgba(46, 139, 87, 0.12));
+            border-color: rgba(46, 139, 87, 0.3);
+            box-shadow: 0 5px 15px rgba(46, 139, 87, 0.1);
         }
         .pill-item i {
             color: var(--accent-green);
@@ -432,10 +678,17 @@
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.08), rgba(46, 139, 87, 0.04));
-            border: 1px solid rgba(0, 51, 102, 0.12);
-            border-radius: 16px;
-            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(46, 139, 87, 0.06));
+            border: 1px solid rgba(0, 51, 102, 0.15);
+            border-radius: 18px;
+            padding: 16px 18px;
+            transition: all 0.3s ease;
+        }
+        .org-node:hover {
+            transform: scale(1.02);
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.15), rgba(46, 139, 87, 0.1));
+            border-color: rgba(46, 139, 87, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 51, 102, 0.1);
         }
         .org-node .label {
             font-weight: 900;
@@ -492,48 +745,113 @@
         }
         .service-card {
             border: none;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.08),
+                0 5px 15px rgba(0,0,0,0.04);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
+            position: relative;
         }
-        .service-card:hover { transform: translateY(-10px); }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-green), var(--primary-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        .service-card:hover { 
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.12),
+                0 15px 30px rgba(46, 139, 87, 0.15);
+        }
+        .service-card img {
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
         /* Booking Section */
         .booking-section {
             position: relative;
-            background: linear-gradient(rgba(0, 20, 40, 0.9), rgba(0, 40, 20, 0.9)), url('{{ asset("images/warehouse-smiling-colleagues-scanning-cardboard-box-barcode-chatting_482257-77667.jpg") }}');
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(46, 139, 87, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0, 51, 102, 0.4) 0%, transparent 50%),
+                linear-gradient(rgba(0, 20, 40, 0.92), rgba(0, 40, 20, 0.92)), 
+                url('{{ asset("images/warehouse-smiling-colleagues-scanning-cardboard-box-barcode-chatting_482257-77667.jpg") }}');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             padding: 120px 0;
             color: white;
         }
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            pointer-events: none;
+        }
         .booking-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 32px;
             padding: 50px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.4),
+                0 0 100px rgba(46, 139, 87, 0.1),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .booking-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
+            animation: card-shine 8s linear infinite;
+        }
+        @keyframes card-shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
         .form-control-custom {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 14px;
+            padding: 16px 22px;
             color: #ffffff !important;
             font-weight: 600;
             transition: all 0.3s ease;
+        }
+        .form-control-custom:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.4);
         }
         .form-control-custom::placeholder {
             color: rgba(255, 255, 255, 0.8);
         }
         .form-control-custom:focus {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             border-color: var(--accent-green);
-            box-shadow: 0 0 15px rgba(46, 139, 87, 0.3);
+            box-shadow: 0 0 25px rgba(46, 139, 87, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
             color: #ffffff !important;
+            transform: translateY(-2px);
         }
         .form-select.form-control-custom option {
             background-color: var(--primary-blue);
@@ -549,37 +867,153 @@
             transform: translateX(10px);
         }
         .booking-info-icon {
-            width: 65px;
-            height: 65px;
-            background: var(--accent-green);
-            border-radius: 18px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-green), #1e6b45);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin-right: 25px;
-            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.4);
+            box-shadow: 
+                0 15px 35px rgba(46, 139, 87, 0.4),
+                0 0 30px rgba(46, 139, 87, 0.2);
             color: white;
+            transition: all 0.3s ease;
+        }
+        .booking-info-item:hover .booking-info-icon {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 
+                0 20px 40px rgba(46, 139, 87, 0.5),
+                0 0 40px rgba(46, 139, 87, 0.3);
         }
         .inquiry-submit-btn {
-            background-color: var(--accent-green) !important;
+            background: linear-gradient(135deg, var(--accent-green), #1e6b45) !important;
             color: white !important;
             border: none;
-            padding: 18px;
+            padding: 20px;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-size: 1.05rem;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .inquiry-submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .inquiry-submit-btn:hover::before {
+            left: 100%;
         }
         .inquiry-submit-btn:hover {
-            background-color: #ffffff !important;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0) !important;
             color: var(--primary-blue) !important;
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.2);
         }
 
-        .footer { background-color: #1a140f; color: #fff; padding: 80px 0 30px; }
-        .footer-link { color: rgba(255,255,255,0.6); transition: 0.3s; }
-        .footer-link:hover { color: var(--accent-gold); padding-left: 5px; }
+        .footer { 
+            background: linear-gradient(135deg, #1a140f 0%, #0d0a08 100%);
+            color: #fff; 
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-green), var(--primary-blue), var(--accent-green));
+            animation: footer-glow 3s ease-in-out infinite;
+        }
+        @keyframes footer-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .footer-link { 
+            color: rgba(255,255,255,0.6); 
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .footer-link:hover { 
+            color: #d4af37; 
+            padding-left: 8px;
+            transform: translateX(5px);
+        }
+
+        /* Glowing border effect for badges */
+        .badge {
+            transition: all 0.3s ease;
+        }
+        .badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Counter animation */
+        .counter-animate {
+            display: inline-block;
+        }
+
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Floating animation for elements */
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(1deg); }
+            75% { transform: translateY(5px) rotate(-1deg); }
+        }
+        .gentle-float {
+            animation: gentle-float 6s ease-in-out infinite;
+        }
+
+        /* Image hover zoom */
+        .img-zoom-container {
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        .img-zoom-container img {
+            transition: transform 0.6s ease;
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Button glow effect */
+        .btn-glow {
+            position: relative;
+        }
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, var(--accent-green), var(--primary-blue), var(--accent-green));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            filter: blur(15px);
+            transition: opacity 0.3s ease;
+        }
+        .btn-glow:hover::after {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -590,39 +1024,39 @@
     <section id="about" class="section-padding bg-white overflow-hidden">
         <div class="container">
             <div class="row align-items-center mb-5">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="img-reveal shadow-lg floating-element">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
+                    <div class="img-reveal shadow-lg img-zoom-container">
                         <img src="{{ asset(rawurlencode('building-new-concrete-houses_1398-3932 (1).jpg')) }}" class="img-fluid" alt="Zama Construction">
                     </div>
                 </div>
-                <div class="col-lg-6 ps-lg-5">
-                    <div class="welcome-badge">
+                <div class="col-lg-6 ps-lg-5 reveal-right">
+                    <div class="welcome-badge reveal">
                         <span>Who We Are</span>
                     </div>
                     <div class="text-reveal-wrapper">
                         <h2 class="section-title text-reveal-content">A Legacy of <span style="color: var(--accent-green);">Excellence</span> & Integrity</h2>
                     </div>
-                    <p class="about-text mb-4 animate-text-in">
+                    <p class="about-text mb-4 reveal">
                         Founded in 2022, <strong>ZAMA CONTRACTORS (T) LIMITED</strong> is a Tanzanian construction and engineering company committed to delivering dependable workmanship, strong project management, and lasting results.
                     </p>
-                    <p class="about-text mb-5 animate-text-in delay-1">
+                    <p class="about-text mb-5 reveal delay-1">
                         We work with both government and private sector clients, providing construction, civil works, technical installations, and maintenance services with a focus on safety, quality, and timely delivery.
                     </p>
                     
                     <div class="row g-4">
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 reveal-scale">
                             <div class="stat-card-modern text-center">
                                 <h2 class="fw-900 color-primary mb-0">2022</h2>
                                 <p class="small fw-bold text-uppercase text-success mb-0">Founded</p>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 reveal-scale" style="animation-delay: 0.1s;">
                             <div class="stat-card-modern text-center">
                                 <h2 class="fw-900 color-primary mb-0">50+</h2>
                                 <p class="small fw-bold text-uppercase text-success mb-0">Projects</p>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 reveal-scale" style="animation-delay: 0.2s;">
                             <div class="stat-card-modern text-center">
                                 <h2 class="fw-900 color-primary mb-0">100%</h2>
                                 <p class="small fw-bold text-uppercase text-success mb-0">Reliability</p>
@@ -633,22 +1067,22 @@
             </div>
 
             <div class="row g-4 mt-5">
-                <div class="col-lg-4">
-                    <div class="vision-mission-card">
+                <div class="col-lg-4 reveal" style="animation-delay: 0s;">
+                    <div class="vision-mission-card gentle-float" style="animation-delay: 0s;">
                         <div class="icon-box"><i class="bi bi-eye"></i></div>
                         <h4 class="fw-bold mb-3 text-uppercase">Our Vision</h4>
                         <p class="text-muted">To be a leading and trusted construction and engineering company in Tanzania, recognized for excellence, innovation, and reliability.</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="vision-mission-card">
+                <div class="col-lg-4 reveal" style="animation-delay: 0.15s;">
+                    <div class="vision-mission-card gentle-float" style="animation-delay: 0.5s;">
                         <div class="icon-box"><i class="bi bi-bullseye"></i></div>
                         <h4 class="fw-bold mb-3 text-uppercase">Our Mission</h4>
                         <p class="text-muted">To deliver high-quality construction and technical services that meet client expectations through professionalism, integrity, and timely project execution.</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="vision-mission-card">
+                <div class="col-lg-4 reveal" style="animation-delay: 0.3s;">
+                    <div class="vision-mission-card gentle-float" style="animation-delay: 1s;">
                         <div class="icon-box"><i class="bi bi-shield-check"></i></div>
                         <h4 class="fw-bold mb-3 text-uppercase">Core Values</h4>
                         <ul class="list-unstyled text-muted">
@@ -798,13 +1232,13 @@
     <!-- Services Grid -->
     <section id="services" class="section-padding bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <div class="welcome-badge">Our Expertise</div>
-                <h2 class="section-title">Specialized Construction & <span style="color: var(--accent-green);">Engineering Services</span></h2>
-                <p class="about-text mx-auto" style="max-width: 800px;">ZAMA Contractors (T) Limited delivers reliable, high-quality solutions across construction, engineering, and technical services. Our capabilities are designed to meet the demands of both public and private sector clients, ensuring efficiency, durability, and value for money.</p>
+            <div class="text-center mb-5 reveal">
+                <div class="welcome-badge reveal-scale">Our Expertise</div>
+                <h2 class="section-title reveal">Specialized Construction & <span style="color: var(--accent-green);">Engineering Services</span></h2>
+                <p class="about-text mx-auto reveal" style="max-width: 800px;">ZAMA Contractors (T) Limited delivers reliable, high-quality solutions across construction, engineering, and technical services. Our capabilities are designed to meet the demands of both public and private sector clients, ensuring efficiency, durability, and value for money.</p>
             </div>
             <div class="row g-4 mb-5">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal" style="animation-delay: 0s;">
                     <div class="service-card bg-white">
                         <img src="{{ asset('Building Construction.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Civil">
                         <div class="p-4 text-center">
@@ -813,7 +1247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal" style="animation-delay: 0.15s;">
                     <div class="service-card bg-white">
                         <img src="{{ asset('Building Insulation Materials.jpg') }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Building">
                         <div class="p-4 text-center">
@@ -822,7 +1256,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="col-lg-4 col-md-6 mx-auto reveal" style="animation-delay: 0.3s;">
                     <div class="service-card bg-white">
                         <img src="{{ asset(rawurlencode('Security & Surveillance Systems.jpg')) }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Maintenance">
                         <div class="p-4 text-center">
@@ -832,8 +1266,8 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5">
-                <a href="{{ route('services') }}" class="cta-btn cta-primary shadow-lg">VIEW ALL 7+ SERVICES <i class="bi bi-arrow-right-circle ms-2"></i></a>
+            <div class="text-center mt-5 reveal">
+                <a href="{{ route('services') }}" class="cta-btn cta-primary shadow-lg btn-glow">VIEW ALL 7+ SERVICES <i class="bi bi-arrow-right-circle ms-2"></i></a>
             </div>
         </div>
     </section>
@@ -841,15 +1275,15 @@
     <!-- Projects Portfolio -->
     <section id="projects" class="section-padding">
         <div class="container">
-            <div class="text-center mb-5">
-                <div class="welcome-badge">Our Impact</div>
-                <h2 class="section-title">Notable <span style="color: var(--accent-green);">Projects Portfolio</span></h2>
-                <p class="about-text mx-auto" style="max-width: 800px;">Explore our track record of delivering high-quality engineering and construction solutions across Tanzania.</p>
+            <div class="text-center mb-5 reveal">
+                <div class="welcome-badge reveal-scale">Our Impact</div>
+                <h2 class="section-title reveal">Notable <span style="color: var(--accent-green);">Projects Portfolio</span></h2>
+                <p class="about-text mx-auto reveal" style="max-width: 800px;">Explore our track record of delivering high-quality engineering and construction solutions across Tanzania.</p>
             </div>
 
             <div class="row mt-5 g-4 mb-5">
-                <div class="col-md-4">
-                    <div class="info-card h-100">
+                <div class="col-md-4 reveal" style="animation-delay: 0s;">
+                    <div class="info-card h-100 gentle-float" style="animation-delay: 0s;">
                         <span class="badge bg-success text-uppercase py-2 px-3 mb-3">Jan–Jun 2026</span>
                         <h5 class="fw-bold text-uppercase mb-3" style="color: var(--primary-blue);">Kinyerezi II Fence Repair</h5>
                         <p class="small text-muted mb-0">Repair and reinforcement of chain link fence to enhance site security for TANESCO Kinyerezi II Gas Plant.</p>
@@ -857,8 +1291,8 @@
                         <div class="small fw-bold text-primary-blue"><i class="bi bi-geo-alt me-2"></i>Dar es Salaam</div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="info-card h-100">
+                <div class="col-md-4 reveal" style="animation-delay: 0.15s;">
+                    <div class="info-card h-100 gentle-float" style="animation-delay: 0.5s;">
                         <span class="badge bg-primary text-uppercase py-2 px-3 mb-3">Oct 2025</span>
                         <h5 class="fw-bold text-uppercase mb-3" style="color: var(--primary-blue);">Mtwara Port External Road</h5>
                         <p class="small text-muted mb-0">Rehabilitation of the external road at Gate No. 3, Mtwara Port for Tanzania Ports Authority (TPA).</p>
@@ -866,8 +1300,8 @@
                         <div class="small fw-bold text-primary-blue"><i class="bi bi-geo-alt me-2"></i>Mtwara</div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="info-card h-100">
+                <div class="col-md-4 reveal" style="animation-delay: 0.3s;">
+                    <div class="info-card h-100 gentle-float" style="animation-delay: 1s;">
                         <span class="badge bg-warning text-dark text-uppercase py-2 px-3 mb-3">Sep 2025</span>
                         <h5 class="fw-bold text-uppercase mb-3" style="color: var(--primary-blue);">Mtwara II Materials Supply</h5>
                         <p class="small text-muted mb-0">Supply and delivery of assorted mechanical and civil materials for TANESCO Mtwara II Gas Plant.</p>
@@ -877,8 +1311,8 @@
                 </div>
             </div>
             
-            <div class="text-center mt-5">
-                <a href="{{ route('projects') }}" class="cta-btn cta-primary shadow-lg">EXPLORE ALL PROJECTS <i class="bi bi-journal-check ms-2"></i></a>
+            <div class="text-center mt-5 reveal">
+                <a href="{{ route('projects') }}" class="cta-btn cta-primary shadow-lg btn-glow">EXPLORE ALL PROJECTS <i class="bi bi-journal-check ms-2"></i></a>
             </div>
         </div>
     </section>
@@ -887,26 +1321,26 @@
     <section id="contact" class="booking-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="welcome-badge" style="background: rgba(255,255,255,0.1); color: #fff;">Get in Touch</div>
-                    <h2 class="display-4 fw-900 mb-4">Ready to Start Your <span style="color: var(--accent-green);">Next Project?</span></h2>
-                    <p class="fs-5 mb-5 opacity-75">Connect with Tanzania's leading engineering team today. We are ready to provide expert consultations and precise costing for your industrial or construction needs.</p>
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
+                    <div class="welcome-badge reveal-scale" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3);">Get in Touch</div>
+                    <h2 class="display-4 fw-900 mb-4 reveal">Ready to Start Your <span style="color: var(--accent-green);">Next Project?</span></h2>
+                    <p class="fs-5 mb-5 opacity-75 reveal">Connect with Tanzania's leading engineering team today. We are ready to provide expert consultations and precise costing for your industrial or construction needs.</p>
                     
-                    <div class="booking-info-item animate-text-in">
+                    <div class="booking-info-item reveal" style="animation-delay: 0s;">
                         <div class="booking-info-icon"><i class="bi bi-geo-alt"></i></div>
                         <div>
                             <h6 class="fw-bold mb-1">Our Office</h6>
                             <p class="mb-0 opacity-75">Kinondoni, Dar es Salaam, Tanzania</p>
                         </div>
                     </div>
-                    <div class="booking-info-item animate-text-in delay-1">
+                    <div class="booking-info-item reveal" style="animation-delay: 0.15s;">
                         <div class="booking-info-icon"><i class="bi bi-telephone"></i></div>
                         <div>
                             <h6 class="fw-bold mb-1">Call Us Directly</h6>
                             <p class="mb-0 opacity-75">+255 657 099 992</p>
                         </div>
                     </div>
-                    <div class="booking-info-item animate-text-in delay-2">
+                    <div class="booking-info-item reveal" style="animation-delay: 0.3s;">
                         <div class="booking-info-icon"><i class="bi bi-envelope"></i></div>
                         <div>
                             <h6 class="fw-bold mb-1">Official Email</h6>
@@ -914,7 +1348,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 reveal-right">
                     <div class="booking-card">
                         <h3 class="fw-bold mb-4">Send an Inquiry</h3>
                         <form action="#" method="POST">
@@ -939,7 +1373,7 @@
                                     <textarea class="form-control form-control-custom" rows="4" placeholder="Briefly describe your project requirements..." required></textarea>
                                 </div>
                                 <div class="col-12 mt-4">
-                                    <button type="submit" class="inquiry-submit-btn w-100 rounded-3 shadow-lg">SUBMIT INQUIRY NOW <i class="bi bi-send-fill ms-2"></i></button>
+                                    <button type="submit" class="inquiry-submit-btn w-100 rounded-3 shadow-lg btn-glow">SUBMIT INQUIRY NOW <i class="bi bi-send-fill ms-2"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -951,8 +1385,159 @@
 
     @include('partials.footer')
 
+    <!-- Particle Effects Container -->
+    <div class="particles-container" id="particles"></div>
+
     <!-- Bootstrap Icons & JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Enhanced Animations & Interactions -->
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particle.style.width = (3 + Math.random() * 6) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+
+        // Scroll reveal animation
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            
+            const revealOnScroll = () => {
+                reveals.forEach(element => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = element.getBoundingClientRect().top;
+                    const revealPoint = 100;
+                    
+                    if (elementTop < windowHeight - revealPoint) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check
+        }
+
+        // Parallax effect for hero
+        function initParallax() {
+            const hero = document.querySelector('.hero-section');
+            if (!hero) return;
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.5;
+                hero.style.transform = `translateY(${rate}px)`;
+            });
+        }
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-animate');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                // Trigger when in view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(counter);
+            });
+        }
+
+        // Image reveal animation
+        function initImageReveal() {
+            const reveals = document.querySelectorAll('.img-reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            reveals.forEach(reveal => observer.observe(reveal));
+        }
+
+        // Smooth scroll for navigation links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Magnetic button effect
+        function initMagneticButtons() {
+            const buttons = document.querySelectorAll('.cta-btn, .inquiry-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = '';
+                });
+            });
+        }
+
+        // Initialize all animations when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initScrollReveal();
+            initParallax();
+            animateCounters();
+            initImageReveal();
+            initSmoothScroll();
+            initMagneticButtons();
+        });
+    </script>
 </body>
 </html>
