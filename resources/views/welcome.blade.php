@@ -226,24 +226,18 @@
         .hero-content h1 {
             font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 900;
-            line-height: 1;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-shadow: 
-                2px 4px 10px rgba(0,0,0,0.5),
-                0 0 40px rgba(46, 139, 87, 0.3),
-                0 0 80px rgba(0, 51, 102, 0.2);
-            background: linear-gradient(135deg, #fff 0%, #e0e0e0 50%, #fff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.4);
         }
         .hero-content p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             max-width: 850px;
             margin-bottom: 2.5rem;
-            font-weight: 600;
-            line-height: 1.5;
-            text-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+            font-weight: 500;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.95);
         }
 
         /* Hero Features Single Line */
@@ -272,12 +266,6 @@
             font-size: 1.8rem;
             margin-right: 15px;
             color: var(--accent-green);
-            filter: drop-shadow(0 0 10px rgba(46, 139, 87, 0.5));
-            animation: icon-pulse 2s ease-in-out infinite;
-        }
-        @keyframes icon-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
         }
         .feature-single h6 {
             font-weight: 800;
